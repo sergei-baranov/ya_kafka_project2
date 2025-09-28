@@ -1,0 +1,17 @@
+tesla@tesla:~/VCS/ya_kafka_project2$ \
+sudo docker exec ya_kafka_project2-kafka-0-1 kafka-topics.sh \
+--create --topic ya_kafka_project2 --bootstrap-server localhost:9092 \
+--partitions 3 --replication-factor 2
+
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. \
+To avoid issues it is best to use either, but not both.
+Created topic ya_kafka_project2.
+
+tesla@tesla:~/VCS/ya_kafka_project2$ \
+sudo docker exec ya_kafka_project2-kafka-0-1 kafka-topics.sh \
+--describe --topic ya_kafka_project2 --bootstrap-server localhost:9092
+
+Topic: ya_kafka_project2	TopicId: ukuqBVcxTjCsoXzh_IzqRg	PartitionCount: 3	ReplicationFactor: 2	Configs:
+	Topic: ya_kafka_project2	Partition: 0	Leader: 0	Replicas: 0,1	Isr: 0,1	Elr: 	LastKnownElr:
+	Topic: ya_kafka_project2	Partition: 1	Leader: 1	Replicas: 1,2	Isr: 1,2	Elr: 	LastKnownElr:
+	Topic: ya_kafka_project2	Partition: 2	Leader: 2	Replicas: 2,0	Isr: 2,0	Elr: 	LastKnownElr:
